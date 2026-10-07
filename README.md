@@ -1,59 +1,65 @@
-# PostMan
+# Thực hành Postman: Gửi yêu cầu GET và POST tới API
 
-1. Gửi yêu cầu GET (Lấy dữ liệu)
+## 1. Giới thiệu
 
-Hình ảnh đầu tiên minh họa cách gọi phương thức GET để lấy toàn bộ danh sách người dùng từ API mẫu.
+Postman là công cụ dùng để thiết kế, gửi và kiểm thử các yêu cầu HTTP tới API mà không cần viết mã. Trong bài thực hành này, em sử dụng Postman để:
 
-Phương thức (Method): GET
+- Gửi yêu cầu **GET** nhằm lấy dữ liệu từ một API mẫu.
+- Gửi yêu cầu **POST** nhằm thêm mới dữ liệu.
+- Gửi yêu cầu **GET** tới một trang web thông thường để so sánh định dạng dữ liệu trả về.
 
-URL: https://jsonplaceholder.typicode.com/users
+API mẫu được sử dụng: [JSONPlaceholder](https://jsonplaceholder.typicode.com/) – dịch vụ API giả lập miễn phí dùng cho mục đích học tập và kiểm thử.
 
-Cách thực hiện:
+## 2. Gửi yêu cầu GET (Lấy dữ liệu)
 
-Chọn phương thức GET từ danh sách thả xuống bên cạnh thanh URL.
+- Phương thức (Method): `GET`
+- URL: `https://jsonplaceholder.typicode.com/users`
 
-Nhập chính xác đường dẫn https://jsonplaceholder.typicode.com/users.
+### Các bước thực hiện
 
-Nhấn nút Send màu xanh dương.
+1. Chọn phương thức **GET** từ danh sách thả xuống bên cạnh thanh URL.
+2. Nhập chính xác đường dẫn `https://jsonplaceholder.typicode.com/users`.
+3. Nhấn nút **Send** (màu xanh dương).
 
-Kết quả trả về (Response):
+### Kết quả trả về (Response)
 
-Status: 200 OK (Thành công).
+- **Status:** `200 OK` – yêu cầu được xử lý thành công.
+- **Body:** danh sách người dùng ở định dạng JSON, gồm các thông tin chi tiết như `id`, `name`, `username`, `email`, `address`, ...
 
-Body: Hiển thị danh sách dữ liệu dạng JSON chứa thông tin chi tiết của người dùng (như id, name, username, email, address,...).
-<img width="1452" height="895" alt="image" src="https://github.com/user-attachments/assets/0b201181-2f24-4efc-a66f-3ac43e3253e4" />
+![Kết quả gửi yêu cầu GET tới /users](https://github.com/user-attachments/assets/0b201181-2f24-4efc-a66f-3ac43e3253e4)
 
+*Hình 1: Gửi yêu cầu GET và nhận danh sách người dùng.*
 
-2. Gửi yêu cầu POST (Thêm mới dữ liệu)
+## 3. Gửi yêu cầu POST (Thêm mới dữ liệu)
 
-Hình ảnh thứ hai minh họa kết quả khi gửi yêu cầu POST lên cùng hệ thống API.
+- Phương thức (Method): `POST`
+- URL: `https://jsonplaceholder.typicode.com/users`
 
-Phương thức (Method): POST
+### Kết quả trả về (Response)
 
-URL: https://jsonplaceholder.typicode.com/users
+- **Status:** `201 Created` – tài nguyên mới đã được khởi tạo thành công.
+- **Body:** trả về `id` của bản ghi vừa tạo (ví dụ: `"id": 11`).
 
-Kết quả trả về (Response):
+> **Lưu ý:** JSONPlaceholder là API giả lập nên dữ liệu gửi lên không thực sự được lưu lại; server chỉ phản hồi như thể bản ghi đã được tạo.
 
-Status: 201 Created (Đã khởi tạo thành công tài nguyên mới).
+![Kết quả gửi yêu cầu POST tới /users](https://github.com/user-attachments/assets/86d69886-11c4-4781-b34d-d5106d7681df)
 
-Body: Trả về ID của bản ghi vừa được tạo (ví dụ: "id": 11).
-<img width="1901" height="1001" alt="00d20989-725e-46e2-85e4-56edd6aeddc5" src="https://github.com/user-attachments/assets/86d69886-11c4-4781-b34d-d5106d7681df" />
+*Hình 2: Gửi yêu cầu POST và nhận phản hồi 201 Created.*
 
+## 4. Thử nghiệm với trang web khác (VnExpress)
 
-3. Thử nghiệm với trang web khác (Ví dụ: VnExpress)
-   <img width="1900" height="1007" alt="1c750055-7ff7-4d0e-9c9f-4ef2c9b7620a" src="https://github.com/user-attachments/assets/419bbe8e-5cfd-4de7-822b-f148d9559e04" />
+Để kiểm tra sự khác biệt giữa API và trang web thông thường, em thay đổi URL sang trang chủ VnExpress.
 
+- Phương thức (Method): `GET`
+- URL: `https://vnexpress.net/`
 
-Hình ảnh thứ ba minh họa việc thay đổi URL để kiểm tra một trang web thông thường.
+### Kết quả trả về (Response)
 
-Phương thức (Method): GET
+- **Status:** `200 OK`.
+- **Body:** tab hiển thị định dạng **HTML** chứa toàn bộ mã nguồn trang chủ VnExpress, thay vì dữ liệu JSON thuần túy.
 
-URL: https://vnexpress.net/
+![Kết quả gửi yêu cầu GET tới vnexpress.net](https://github.com/user-attachments/assets/419bbe8e-5cfd-4de7-822b-f148d9559e04)
 
-Kết quả trả về (Response):
+*Hình 3: Gửi yêu cầu GET tới trang web VnExpress.*
 
-Status: 200 OK.
-
-Body: Tab hiển thị định dạng HTML chứa toàn bộ mã nguồn của trang chủ VnExpress thay vì dữ liệu JSON thuần túy.
-
-Mẹo: Bạn có thể lưu lại các request thường dùng bằng cách bấm vào nút Save ở góc trên bên phải giao diện Postman.
+> **Mẹo:** Có thể lưu lại các request thường dùng bằng cách nhấn nút **Save** ở góc trên bên phải giao diện Postman.
