@@ -1,7 +1,4 @@
 # PostMan
-Hướng dẫn sử dụng Postman với API JSONPlaceholder
-
-Tài liệu này hướng dẫn cách thực hiện các loại Request (GET, POST) và kiểm tra các trang web khác trên Postman dựa trên các hình ảnh thực tế.
 
 1. Gửi yêu cầu GET (Lấy dữ liệu)
 
