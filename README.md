@@ -62,4 +62,3 @@ API mẫu được sử dụng: [JSONPlaceholder](https://jsonplaceholder.typico
 
 *Hình 3: Gửi yêu cầu GET tới trang web VnExpress.*
 
-> **Mẹo:** Có thể lưu lại các request thường dùng bằng cách nhấn nút **Save** ở góc trên bên phải giao diện Postman.
